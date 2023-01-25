@@ -1,0 +1,323 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --hue: 255;
+
+  --bg: hsla(calc(var(--hue) - 3), 31%, 5%);
+  --div: hsla(calc(var(--hue) - 2), 33%, 13%);
+
+  --primary: hsla(var(--hue), 73%, 62%);
+  --hover: hsla(var(--hue), 68%, 68%);
+
+  --second: hsla(var(--hue), 13%, 25%);
+  --second-hover: hsla(var(--hue), 13%, 44%);
+  --second-disable: hsla(calc(var(--hue) - 4), 16%, 16%);
+}
+
+html {
+  background: var(--bg);
+  overflow: auto;
+}
+
+body {
+  display: flex;
+  position: relative;
+}
+
+body * {
+  color: white;
+  border: 1px solid transparent;
+  font-family: "Roboto", sans-serif;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+button:hover {
+  transition: all 0.3s;
+}
+
+.description {
+  width: 808px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  margin: 107px 0 0 77px;
+  padding-bottom: 32px;
+}
+
+h1 {
+  font-family: "Inter";
+  line-height: 100%;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: column;
+
+  width: 958px;
+  height: 576px;
+  margin: 36px 0 50px 77px;
+
+  background: var(--div);
+  border-radius: 8px;
+}
+
+#buttons .legends {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+
+  margin-left: 93px;
+  padding: 14px 16px;
+}
+
+#buttons .legends p {
+  padding: 10px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 11px;
+  line-height: 13px;
+  text-align: center;
+  width: auto;
+}
+
+.row {
+  display: flex;
+}
+
+#buttons .properties {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+
+  width: 94px;
+  height: 100%;
+  padding: 32px 0px;
+
+  background: var(--div);
+}
+
+#buttons .properties p {
+  padding: 10px;
+  gap: 10px;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: center;
+}
+
+#buttons .button {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 32px;
+
+  width: 100%;
+  height: 512px;
+
+  border-width: 0px 6px 7px 0px;
+  border: solid var(--div);
+
+  border-radius: 0px 0px 8px 0px;
+  background: var(--bg);
+}
+
+#buttons .button .col-primary,
+#buttons .button .col-secondary,
+#buttons .button .col-third {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  gap: 32px;
+
+  width: auto;
+  height: auto;
+}
+
+#buttons .button .col-primary button,
+#buttons .button .col-secondary button,
+#buttons .button .col-third button {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 8px;
+
+  background: var(--primary);
+  border-radius: 24px;
+
+  font-family: "Inter";
+  font-size: 14px;
+  line-height: 24px;
+
+  justify-content: space-between;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#buttons .button .col-primary button:hover {
+  background-color: var(--hover);
+}
+
+/* SECONDARY */
+#buttons .button .col-secondary button {
+  background: var(--second);
+}
+
+/* THIRD */
+#buttons .button .col-third button {
+  background: transparent;
+}
+
+#buttons .button .col-secondary button:hover,
+#buttons .button .col-third button:hover {
+  background-color: var(--second-hover);
+}
+
+/* CURSORES */
+#buttons .button .col-cursor {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  gap: 32px;
+
+  width: auto;
+  height: auto;
+}
+
+/* TESTS */
+#test {
+  position: absolute;
+  width: 406px;
+  height: 100%;
+  right: 0px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: var(--div);
+}
+
+#test .description {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  gap: 8px;
+  width: 318px;
+  height: 86px;
+}
+
+#test .buttons-test {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+
+  width: auto;
+  height: 208px;
+  margin: 68px 0 0 44px;
+}
+
+#test button:nth-child(1),
+#test button:nth-child(2),
+#test button:nth-child(3) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 8px;
+
+  background: var(--primary);
+  border-radius: 24px;
+
+  font-family: "Inter";
+  font-size: 14px;
+  line-height: 24px;
+
+  text-align: center;
+  text-transform: uppercase;
+}
+#test button:nth-child(1):hover {
+  background-color: var(--hover);
+}
+
+#test button:nth-child(2) {
+  background: var(--second);
+  opacity: 0.56;
+}
+
+#test button:nth-child(3) {
+    background: transparent;
+}
+
+#test button:nth-child(2):hover,
+#test button:nth-child(3):hover {
+  background-color: var(--second-hover);
+}
+
+/* PROPERTIES */
+#buttons .button .col-primary button:focus,
+#buttons .button .col-secondary button:focus,
+#buttons .button .col-third button:focus,
+#test button:nth-child(1):focus,
+#test button:nth-child(2):focus,
+#test button:nth-child(3):focus {
+  border: 2px solid #d9cdf7;
+}
+
+#buttons .button .col-primary button:disabled,
+#buttons .button .col-secondary button:disabled,
+#buttons .button .col-third button:disabled {
+  opacity: 0.56;
+  cursor: not-allowed;
+}
+
+.loader {
+  border: 3px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 3px solid transparent;
+  width: 14px;
+  height: 14px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.movable {
+  cursor: move;
+}
